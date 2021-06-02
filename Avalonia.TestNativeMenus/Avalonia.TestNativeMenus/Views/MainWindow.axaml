@@ -1,0 +1,36 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Avalonia.TestNativeMenus.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Avalonia.TestNativeMenus.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Avalonia.TestNativeMenus">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    
+    <NativeMenu.Menu>
+        <NativeMenu>
+            <NativeMenuItem Header="MainMenu1" >
+                <NativeMenu>
+                    <NativeMenuItem Header="MainMenu1-1" />
+                    <NativeMenuItem Header="MainMenu1-2" />
+                </NativeMenu>
+            </NativeMenuItem>
+            <NativeMenuItem Header="MainMenu2">
+                <NativeMenu>
+                    <NativeMenuItem Header="MainMenu2-1" />
+                    <NativeMenuItem Header="MainMenu2-2" />
+                </NativeMenu>
+            </NativeMenuItem>
+        </NativeMenu>
+    </NativeMenu.Menu>
+
+    <Grid RowDefinitions="40 40">
+        <Button Grid.Row="0" Click="Button_OnClick_Dialog">Dialog</Button>
+        <Button Grid.Row="1" Click="Button_OnClick_Normal">Normal</Button>    
+    </Grid>
+</Window>
